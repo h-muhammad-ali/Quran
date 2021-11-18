@@ -86,15 +86,13 @@ public class SearchInterface extends AppCompatActivity {
             }
         });
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SearchInterface.this, Result.class);
-                intent.putExtra("surahName", surahName.getSelectedItem().toString());
-                intent.putExtra("start", Integer.valueOf(startingVerse.getSelectedItem().toString()));
-                intent.putExtra("end", Integer.valueOf(endingVerse.getSelectedItem().toString()));
-                startActivity(intent);
-            }
+        search.setOnClickListener(view -> {
+            Intent intent = new Intent(SearchInterface.this, Result.class);
+            intent.putExtra("surahName", surahName.getSelectedItem().toString());
+            intent.putExtra("start", Integer.valueOf(startingVerse.getSelectedItem().toString()));
+            intent.putExtra("end", Integer.valueOf(endingVerse.getSelectedItem().toString()));
+            intent.putExtra("startingIndex", surahName.getSelectedItemPosition());
+            startActivity(intent);
         });
 
     }
