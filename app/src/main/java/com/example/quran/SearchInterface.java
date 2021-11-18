@@ -91,7 +91,7 @@ public class SearchInterface extends AppCompatActivity {
             intent.putExtra("surahName", surahName.getSelectedItem().toString());
             intent.putExtra("start", Integer.valueOf(startingVerse.getSelectedItem().toString()));
             intent.putExtra("end", Integer.valueOf(endingVerse.getSelectedItem().toString()));
-            intent.putExtra("startingIndex", surahName.getSelectedItemPosition());
+            intent.putExtra("startingIndex", qdh.getSurahStart(surahName.getSelectedItemPosition()));
             startActivity(intent);
         });
 
