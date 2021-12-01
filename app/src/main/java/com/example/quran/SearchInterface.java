@@ -37,7 +37,8 @@ public class SearchInterface extends AppCompatActivity {
         startingVerse = findViewById(R.id.startingVerse);
         endingVerse = findViewById(R.id.endingVerse);
         search = findViewById(R.id.btnSearch);
-        ArrayAdapter<String> surahNameAdapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item, qdh.englishSurahNames);
+        ArrayAdapter<String> surahNameAdapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item, qdh.urduSurahNames);
+        //SurahNameListAdapter surahNameAdapter = new SurahNameListAdapter(this, qdh.englishSurahNames);
         surahNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         surahName.setAdapter(surahNameAdapter);
         surahName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -51,35 +52,10 @@ public class SearchInterface extends AppCompatActivity {
                 startingVerseAdapter = new ArrayAdapter<Integer>(SearchInterface.this,  android.R.layout.simple_spinner_item, range);
                 startingVerseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 startingVerse.setAdapter(startingVerseAdapter);
-//                startingVerse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                        start = Integer.valueOf(adapterView.getItemAtPosition(i).toString());
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//                    }
-//                });
-
                 endingVerseAdapter = new ArrayAdapter<Integer>(SearchInterface.this,  android.R.layout.simple_spinner_item, range);
                 endingVerseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 endingVerse.setAdapter(endingVerseAdapter);
-//                endingVerse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                        end = Integer.valueOf(adapterView.getItemAtPosition(i).toString());
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//                    }
-//                });
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
