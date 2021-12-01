@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="0dp"
     android:layout_marginRight="5dp"
-    android:layout_marginBottom="2dp"
+    android:layout_marginBottom="0dp"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="#EFEDE7"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
     app:cardMaxElevation="10dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
@@ -19,7 +19,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="375dp"
-        android:layout_height="118dp"
+        android:layout_height="wrap_content"
         android:background="#E2E0D5"
         android:backgroundTint="#E2E0D5">
 
@@ -27,9 +27,9 @@
         <TextView
             android:id="@+id/verse"
             android:layout_width="373dp"
-            android:layout_height="116dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
-            android:textAlignment="center"
+            android:textAlignment="viewEnd"
             android:textSize="16sp"
             app:autoSizeMaxTextSize="16sp"
             app:autoSizeMinTextSize="12sp"

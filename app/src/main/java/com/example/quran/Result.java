@@ -27,7 +27,7 @@ public class Result extends AppCompatActivity {
         Integer start = intent.getExtras().getInt("start");
         Integer end = intent.getExtras().getInt("end");
         Integer startingIndex = intent.getExtras().getInt("startingIndex");
-        List<String> verses = Arrays.asList(quranArabicText.GetData(startingIndex + start - 1, startingIndex + end - 1));
+        List<String> verses = Arrays.asList(quranArabicText.GetData(startingIndex + (start - 1), startingIndex + end));
         Adapter adapter = new Adapter(this, verses);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
