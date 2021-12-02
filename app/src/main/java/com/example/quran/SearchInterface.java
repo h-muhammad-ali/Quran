@@ -37,9 +37,9 @@ public class SearchInterface extends AppCompatActivity {
         startingVerse = findViewById(R.id.startingVerse);
         endingVerse = findViewById(R.id.endingVerse);
         search = findViewById(R.id.btnSearch);
-        ArrayAdapter<String> surahNameAdapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item, qdh.urduSurahNames);
-        //SurahNameListAdapter surahNameAdapter = new SurahNameListAdapter(this, qdh.englishSurahNames);
-        surahNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ///ArrayAdapter<String> surahNameAdapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item, qdh.urduSurahNames);
+        SurahNameListAdapter surahNameAdapter = new SurahNameListAdapter(this, qdh.englishSurahNames);
+        //surahNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         surahName.setAdapter(surahNameAdapter);
         surahName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
