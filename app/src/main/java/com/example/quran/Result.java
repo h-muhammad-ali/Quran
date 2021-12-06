@@ -6,8 +6,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.quran.QuranData.QuranArabicText;
 
@@ -23,13 +28,9 @@ public class Result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        Toolbar myChildToolbar =
-                (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myChildToolbar);
-        // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
-
-        // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.rc_view);
         Intent intent = getIntent();
@@ -42,5 +43,28 @@ public class Result extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                try {
+                    Uri webpage = Uri.parse("https://github.com/mali-ai/Quran");
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, webpage);
+                    startActivity(myIntent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, "No application can handle this request. Please install a web browser or check your URL.",  Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
