@@ -1,6 +1,8 @@
 package com.example.quran;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,14 @@ public class Result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        Toolbar myChildToolbar =
+                (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myChildToolbar);
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.rc_view);
         Intent intent = getIntent();
         String surah = intent.getExtras().getString("surahName");
