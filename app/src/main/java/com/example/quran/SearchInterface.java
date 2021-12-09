@@ -26,8 +26,6 @@ public class SearchInterface extends AppCompatActivity {
     QDH qdh = new QDH();
     Integer[] range = {};
     String surah;
-    Integer start;
-    Integer end;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +35,7 @@ public class SearchInterface extends AppCompatActivity {
         startingVerse = findViewById(R.id.startingVerse);
         endingVerse = findViewById(R.id.endingVerse);
         search = findViewById(R.id.btnSearch);
-        ///ArrayAdapter<String> surahNameAdapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item, qdh.urduSurahNames);
         SurahNameListAdapter surahNameAdapter = new SurahNameListAdapter(this, qdh.urduSurahNames);
-        //surahNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         surahName.setAdapter(surahNameAdapter);
         surahName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

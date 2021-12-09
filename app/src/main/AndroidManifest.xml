@@ -10,14 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quran">
         <activity
-            android:name=".Result"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".SearchInterface"/>
-        <activity
-            android:name=".SearchInterface"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name=".RandomVerse"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,8 +19,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Result"
+            android:exported="true"
+            android:parentActivityName=".SearchInterface"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".SearchInterface"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

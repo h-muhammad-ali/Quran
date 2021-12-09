@@ -1,5 +1,7 @@
 package com.example.quran.QuranData;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -579,6 +581,21 @@ public class QDH {
 
     public int getParahStart(int parahNumber) {
         return PSP[parahNumber];
+    }
+
+    public HashMap<String, String> getRandomVerse() {
+        int randomSurahIndex = getRandomNumber(0, 114);
+        QuranArabicText quranArabicText = new QuranArabicText();
+        int randomVerseNumber = getRandomNumber(1, surahAyatCount[randomSurahIndex]);
+        HashMap<String, String> list = new HashMap<String, String>();
+        list.put("verse", quranArabicText.GetData(getSurahStart(randomSurahIndex) + (randomVerseNumber - 1), getSurahStart(randomSurahIndex) + randomVerseNumber)[0]);
+        list.put("surah", urduSurahNames[randomSurahIndex]);
+        list.put("verseNo", String.valueOf(randomVerseNumber));
+        return list;
+    }
+
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
 
