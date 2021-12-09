@@ -1,7 +1,9 @@
 package com.example.quran;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Build;
@@ -31,6 +33,10 @@ public class SearchInterface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_interface);
+        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.toolbar_search_interface);
+        setSupportActionBar(myChildToolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
         surahName = findViewById(R.id.surahName);
         startingVerse = findViewById(R.id.startingVerse);
         endingVerse = findViewById(R.id.endingVerse);
